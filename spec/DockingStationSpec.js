@@ -17,8 +17,18 @@ describe('DockingStation', function(){
   })
 
   it('docks a bike in the DockingStation', function(){
-    var bike = new Object();
+    var bike = new Bike();
     dockingStationBoJo.dock(bike)
     expect(dockingStationBoJo.bikes).toContain(bike)
+  })
+
+  it('responds to release method', function(){
+    expect(dockingStationBoJo.release).toBeDefined();
+  })
+
+  it('releases a bike from the DockingStation', function(){
+    var bike = new Bike();
+    dockingStationBoJo.release(bike)
+    expect(dockingStationBoJo.bikes).not.toContain(bike)
   })
 })

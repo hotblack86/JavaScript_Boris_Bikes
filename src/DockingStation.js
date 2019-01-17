@@ -8,6 +8,11 @@ class DockingStation {
   }
 
   dock(bike) {
-    return "Hello"
+    this.bikes.push(bike);
 }
+
+  release(bike) {
+    this.bikes.pop(bike);
+  }
+
 }

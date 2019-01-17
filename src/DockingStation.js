@@ -1,10 +1,9 @@
-const DockingStation = class {}
+//const DockingStation = class {}
 
-const constructorDS = new DockingStation();
+//const constructorDS = new DockingStation();
 
 class DockingStation {
-  constructor(capacity) {
+  constructor() {
     this.bikes = [];
-    this.capacity = capacity;
   }
 }

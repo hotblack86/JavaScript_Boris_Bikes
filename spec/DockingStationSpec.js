@@ -1,5 +1,14 @@
 describe('DockingStation', function(){
-  it('Should say Buzz in place of 100', function(){
-      expect(FizzBuzz(100)).toBe('Buzz')
+
+  beforeEach( () => {
+    dockingStationBoJo = new DockingStation();
+  });
+
+  it('Make a new instance of DockingStation', function(){
+    expect(dockingStationBoJo instanceof DockingStation).toBeTruthy();
+  });
+
+  it('Initializes with an empty Docking Station', function(){
+    expect(dockingStationBoJo.bikes).toEqual([]);
   });
 })

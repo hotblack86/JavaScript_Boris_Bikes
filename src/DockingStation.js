@@ -6,4 +6,8 @@ class DockingStation {
   constructor() {
     this.bikes = [];
   }
+
+  dock(bike) {
+    return "Hello"
+}
 }

@@ -24,11 +24,12 @@ class DockingStation {
   dock(bike) {
     if (this.isFull() === true) {
       throw "Docking Station is Full";
+    } else if (bike.broken === true) {
+      throw "Can not dock a broken bike"
     } else {
       this.bikes.push(bike);
     }
   }  
-
 
   release(bike) {
     if (this.isEmpty() === true) {

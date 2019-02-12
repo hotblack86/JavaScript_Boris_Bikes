@@ -26,9 +26,9 @@ describe('DockingStation', function(){
     expect(dockingStationBoJo.bikes).not.toContain(bike1)
   })
 
-  it('full method initially returns false', function(){
-    expect(dockingStationBoJo.isFull()).toBe (false);
-  })
+  // it('full method initially returns false', function(){
+  //   expect(dockingStationBoJo.isFull()).toBe (false);
+  // })
 
   it('throws an error if DockingStation is full when trying to dock a bike', function(){ 
     expect(function() { 
@@ -36,6 +36,13 @@ describe('DockingStation', function(){
       dockingStationBoJo.dock(bike2);
       dockingStationBoJo.dock(bike3);
     }).toThrow('Docking Station is Full');
+  })
+
+  it('throws an error when trying to dock a broken bike', function(){ 
+    expect(function() {
+      bike1.isBroken(); 
+      dockingStationBoJo.dock(bike1);
+    }).toThrow('Can not dock a broken bike');
   })
 
   it('throws an error if DockingStation is empty when trying to release a bike', function(){ 

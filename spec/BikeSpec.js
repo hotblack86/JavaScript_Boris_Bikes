@@ -4,7 +4,14 @@ describe('Bike', function(){
     bikeBoJo = new Bike();
   });
 
-  it('Make a new instance of Bike', function(){
-    expect(bikeBoJo instanceof Bike).toBeTruthy();
+
+  it('Initializes with a working bike', function(){
+    expect(bikeBoJo.broken).toEqual(false);
   });
+
+  it('User can report bike as being broken', function(){
+    bikeBoJo.isBroken();
+    expect(bikeBoJo.broken).toEqual(true);
+  });
+
 })

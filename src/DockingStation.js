@@ -13,6 +13,14 @@ class DockingStation {
     }
   }
 
+  isEmpty() {
+    if (this.bikes.length === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   dock(bike) {
     if (this.isFull() === true) {
       throw "Docking Station is Full";
@@ -23,7 +31,11 @@ class DockingStation {
 
 
   release(bike) {
-    this.bikes.pop(bike);
+    if (this.isEmpty() === true) {
+      throw "No bikes available";
+    } else {
+      this.bikes.pop(bike);
+    }
   }
 
 }

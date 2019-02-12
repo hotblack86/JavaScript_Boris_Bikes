@@ -15,20 +15,13 @@ describe('DockingStation', function(){
     expect(dockingStationBoJo.capacity).toEqual(2);
   });
 
-  it('responds to dock method', function(){
-    expect(dockingStationBoJo.dock).toBeDefined();
-  })
-
   it('docks a bike in the DockingStation', function(){
     dockingStationBoJo.dock(bike1);
     expect(dockingStationBoJo.bikes).toContain(bike1);
   })
 
-  it('responds to release method', function(){
-    expect(dockingStationBoJo.release).toBeDefined();
-  })
-
   it('releases a bike from the DockingStation', function(){
+    dockingStationBoJo.dock(bike1);
     dockingStationBoJo.release(bike1)
     expect(dockingStationBoJo.bikes).not.toContain(bike1)
   })
@@ -43,5 +36,11 @@ describe('DockingStation', function(){
       dockingStationBoJo.dock(bike2);
       dockingStationBoJo.dock(bike3);
     }).toThrow('Docking Station is Full');
+  })
+
+  it('throws an error if DockingStation is empty when trying to release a bike', function(){ 
+    expect(function() { 
+      dockingStationBoJo.release(bike1)
+    }).toThrow('No bikes available');
   })
 })

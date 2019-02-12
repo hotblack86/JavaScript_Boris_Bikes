@@ -1,6 +1,3 @@
-//const DockingStation = class {}
-
-//const constructorDS = new DockingStation();
 
 class DockingStation {
   constructor(capacity) {
@@ -8,21 +5,21 @@ class DockingStation {
     this.capacity = capacity;
   }
 
-  full() {
+  isFull() {
     if (this.bikes.length === this.capacity) {
       return true;
     } else {
       return false;
     }
-}
+  }
 
   dock(bike) {
-    // if (full() === true) {
-    //   throw "Docking Station is Full";
-    // } else {
-    this.bikes.push(bike);
-  }
-    
+    if (this.isFull() === true) {
+      throw "Docking Station is Full";
+    } else {
+      this.bikes.push(bike);
+    }
+  }  
 
 
   release(bike) {

@@ -2,14 +2,16 @@ describe('DockingStation', function(){
 
   beforeEach( () => {
     dockingStationBoJo = new DockingStation(2);
-    bike = new Bike();
+    bike1 = new Bike();
+    bike2 = new Bike();
+    bike3 = new Bike();
   });
 
   it('Initializes with an empty DockingStation', function(){
     expect(dockingStationBoJo.bikes).toEqual([]);
   });
 
-  it('Initializes with an default capacity', function(){
+  it('Initializes with a default capacity', function(){
     expect(dockingStationBoJo.capacity).toEqual(2);
   });
 
@@ -18,8 +20,8 @@ describe('DockingStation', function(){
   })
 
   it('docks a bike in the DockingStation', function(){
-    dockingStationBoJo.dock(bike);
-    expect(dockingStationBoJo.bikes).toContain(bike);
+    dockingStationBoJo.dock(bike1);
+    expect(dockingStationBoJo.bikes).toContain(bike1);
   })
 
   it('responds to release method', function(){
@@ -27,18 +29,19 @@ describe('DockingStation', function(){
   })
 
   it('releases a bike from the DockingStation', function(){
-    dockingStationBoJo.release(bike)
-    expect(dockingStationBoJo.bikes).not.toContain(bike)
+    dockingStationBoJo.release(bike1)
+    expect(dockingStationBoJo.bikes).not.toContain(bike1)
   })
 
   it('full method initially returns false', function(){
-    expect(dockingStationBoJo.full()).toBe (false);
+    expect(dockingStationBoJo.isFull()).toBe (false);
   })
 
-  // it('throws an error if DockingStation is full when trying to dock a bike', function(){
-  //   dockingStationBoJo.dock(bike);
-  //   dockingStationBoJo.dock(bike);
-  //   dockingStationBoJo.dock(bike);
-  //   expect(dockingStationBoJo.dock(bike)).toThrow(new Error("Docking Station is Full"));
-  // })
+  it('throws an error if DockingStation is full when trying to dock a bike', function(){ 
+    expect(function() { 
+      dockingStationBoJo.dock(bike1);
+      dockingStationBoJo.dock(bike2);
+      dockingStationBoJo.dock(bike3);
+    }).toThrow('Docking Station is Full');
+  })
 })

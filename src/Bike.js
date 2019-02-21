@@ -3,7 +3,7 @@ class Bike {
     this.broken = false;
   }
 
-  isBroken() {
+  reportBroken() {
     this.broken = true;
   }
 

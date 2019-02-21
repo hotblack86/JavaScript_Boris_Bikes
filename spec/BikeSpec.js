@@ -10,7 +10,7 @@ describe('Bike', function(){
   });
 
   it('User can report bike as being broken', function(){
-    bikeBoJo.isBroken();
+    bikeBoJo.reportBroken();
     expect(bikeBoJo.broken).toEqual(true);
   });
 

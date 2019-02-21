@@ -5,22 +5,6 @@ class DockingStation {
     this.capacity = capacity;
   }
 
-  isFull() {
-    if (this.bikes.length === this.capacity) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  isEmpty() {
-    if (this.bikes.length === 0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
   dock(bike) {
     if (this.isFull() === true) {
       throw "Docking Station is Full";
@@ -37,6 +21,14 @@ class DockingStation {
     } else {
       this.bikes.pop(bike);
     }
+  }
+
+  isFull() {
+    return this.bikes.length === this.capacity;
+  }
+
+  isEmpty() {
+    return this.bikes.length === 0;
   }
 
 }

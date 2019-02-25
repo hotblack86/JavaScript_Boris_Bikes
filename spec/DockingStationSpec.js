@@ -1,8 +1,8 @@
 describe('DockingStation', function(){
 
   beforeEach( () => {
-    DEFAULT_CAPACITY = 2
-    dockingStationBoJo = new DockingStation(DEFAULT_CAPACITY);
+    const defaultCapacity = 2
+    dockingStationBoJo = new DockingStation(defaultCapacity);
     bike1 = new Bike();
     bike2 = new Bike();
     bike3 = new Bike();

@@ -6,7 +6,7 @@ class DockingStation {
   }
 
   dock(bike) {
-    if (this.isFull() === true) {
+    if (this.isFull()) {
       throw "Docking Station is Full";
     } else if (bike.broken === true) {
       throw "Can not dock a broken bike"
@@ -16,7 +16,7 @@ class DockingStation {
   }  
 
   release(bike) {
-    if (this.isEmpty() === true) {
+    if (this.isEmpty()) {
       throw "No bikes available";
     } else {
       this.bikes.pop(bike);

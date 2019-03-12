@@ -4,8 +4,7 @@ describe('Bike', function(){
     bikeBoJo = new Bike();
   });
 
-
-  it('Initializes with a working bike', function(){
+  it('Bike is not broken by default', function(){
     expect(bikeBoJo.broken).toEqual(false);
   });
 

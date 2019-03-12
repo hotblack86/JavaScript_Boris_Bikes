@@ -8,14 +8,6 @@ describe('DockingStation', function(){
     bike3 = new Bike();
   });
 
-  it('Initializes with an empty DockingStation', function(){
-    expect(dockingStationBoJo.bikes).toEqual([]);
-  });
-
-  it('Initializes with a default capacity', function(){
-    expect(dockingStationBoJo.capacity).toEqual(2);
-  });
-
   it('Docks a bike in the DockingStation', function(){
     dockingStationBoJo.dock(bike1);
     expect(dockingStationBoJo.bikes).toContain(bike1);

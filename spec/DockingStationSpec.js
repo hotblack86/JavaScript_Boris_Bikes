@@ -28,11 +28,12 @@ describe('DockingStation', function(){
     }).toThrow('Docking Station is Full');
   })
 
-  it('Throws an error when trying to dock a broken bike', function(){ 
+  it('Throws an error when trying to release a broken bike', function(){ 
     expect(function() {
       bike1.reportBroken(); 
       dockingStationBoJo.dock(bike1);
-    }).toThrow('Can not dock a broken bike');
+      dockingStationBoJo.release(bike1)
+    }).toThrow('Can not release a broken bike');
   })
 
   it('Throws an error if DockingStation is empty when trying to release a bike', function(){ 

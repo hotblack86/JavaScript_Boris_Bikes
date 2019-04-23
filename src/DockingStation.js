@@ -6,11 +6,7 @@ class DockingStation {
   }
 
   dock(bike) {
-    if (this.isFull()) {
-      throw "Docking Station is Full";
-    } else {
-      this.bikes.push(bike);
-    }
+    this.isFull() ? (function(){throw "Docking Station is Full"}()) : this.bikes.push(bike);
   }  
 
   release(bike) {
@@ -30,5 +26,6 @@ class DockingStation {
   isEmpty() {
     return this.bikes.length === 0;
   }
+  
 
 }
